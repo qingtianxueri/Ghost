@@ -189,6 +189,11 @@ const pagination = function pagination(bookshelf) {
                 );
             }
 
+            // 支持title的模糊查询。
+            if ('title' in options && options.title) {
+                self.query('where', 'title', 'like', '%' + options.title + '%');
+            }
+
             return countPromise.then(function (countResult) {
                 // #### Post count clauses
                 // Add any where or join clauses which need to NOT be included with the aggregate query

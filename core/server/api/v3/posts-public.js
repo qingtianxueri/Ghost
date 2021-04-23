@@ -16,7 +16,8 @@ module.exports = {
             'order',
             'page',
             'debug',
-            'absolute_urls'
+            'absolute_urls',
+            'title'
         ],
         validation: {
             options: {

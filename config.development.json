@@ -1,11 +1,17 @@
 {
     "url": "http://localhost:2368",
     "database": {
-        "client": "sqlite3",
+        "client": "mysql",
         "connection": {
-            "filename": "content/data/ghost-dev.db"
+            "host"     : "127.0.0.1",
+            "user"     : "root",
+            "password" : "123456",
+            "database" : "ghost_blog_new"
         },
-        "debug": false
+        "debug": true
+    },
+    "logging": {
+        "level": "fatal"
     },
     "paths": {
         "contentPath": "content/"
@@ -21,6 +27,17 @@
         },
         "admin": {
             "maxAge": 0
+        }
+    },
+    "mail": {
+        "transport": "SMTP",
+        "options": {
+            "secureConnection": true,
+            "auth": {
+                "type": 'OAuth2',
+                "user": " ghost-blog-email@my-ghost-blog-95233.iam.gserviceaccount.com",
+                "accessToken": '74abf37b1dd09a0265c556ae8963f8aa065cdf6c'
+            }
         }
     }
 }
